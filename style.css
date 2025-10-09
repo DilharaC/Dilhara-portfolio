@@ -1,0 +1,701 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Mega:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   /*  background-color:black;*/
+   background-color:black;
+   
+   
+}
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* body::after {
+    content: "© Chamuditha Dilhara";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+} */
+/* Header */
+header{
+    position: fixed;
+   padding: 0%;
+    height: 100px;
+    align-items: center;
+    z-index: 1000; /* A higher z-index to ensure it stays on top */
+     transition: top 0.6s ease, box-shadow 0.3s ease; /* smooth slide */
+    width: 100%;
+    
+    display: flex;
+    background-color:black;
+    right: 0%;
+}
+  
+.profile{
+    color: #CF45CB;
+    font-size: 16px;
+    font-family: "Lexend Mega", serif;
+  font-optical-sizing:auto;
+  letter-spacing: 1.5px;
+  cursor:default;
+  
+
+  font-weight: 600;
+  font-style: normal;
+}
+.header_size{
+    display: flex;
+    color:white;
+    font-weight: bold;
+    font-size: 13px;
+    width: 1300px;
+    
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.header_size .icons{
+    display: flex;
+    
+    gap: 25px;
+}
+.header_size .icons i:hover{
+    color: #CF45CB;
+   
+}
+.header_size .icons i{
+    font-size: 25px;
+    color: white;
+    
+    
+   
+}
+header ul{
+    display: flex;
+    list-style: none;
+    margin: auto; 
+    gap: 22px;
+}
+header ul a{
+    position: relative;
+    color: rgba(255, 255, 255, 0.813);
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 9px;
+    letter-spacing: 0.5px;
+    
+    
+    font-size: 14px;
+    font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 0 10px;
+  text-decoration: none;
+    
+}
+header ul a:after{
+    content: "";
+    position: absolute;
+    background-color: #CF45CB;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+
+    
+
+}
+header ul a:hover:after{
+    
+    width: 100%;
+    
+}
+header ul a:hover{
+    color: white;
+}
+
+
+/* home */
+
+.home{
+    display: flex;
+    bottom: -200px;
+   height: auto;
+   background-color: black;
+   width: 1300px;
+   margin: auto;
+   align-items: center;
+   justify-content: center;
+}
+.home .image{
+    margin-top: 150px;
+    margin-left: auto;
+    width: 600px;
+    display: flex;
+    height: auto;
+    
+   
+    background-color:rgb(245, 233, 233);
+    justify-content: center;
+    background: radial-gradient(circle, rgba(171, 4, 171, 0.457), transparent 67%);
+    
+    align-items: center;
+    
+   
+
+
+
+}
+
+.image img{
+    width: 650px;
+    height: 450px;
+    background: transparent;
+    
+    
+    margin-top: 50px;
+    
+   
+}
+.icon{
+   
+    display: flex;
+ 
+    background-color: blue;
+    width: 1400px;
+    margin: auto;
+}
+.icon a{
+    margin-left: auto;
+    margin-right: 55px;
+   
+}
+.icon .bx{
+  
+    color: white;
+    font-size: 40px;
+    background-color: #CF45CB;
+    border-radius: 100%;
+    padding: 10px;
+    position: fixed; 
+    margin-top: auto;
+    z-index: 1000;
+  
+   
+     
+    
+}
+
+.home .info{
+    margin-top: 260px;
+    color: white;
+    width: 550px;
+    font-size: 14px;
+    font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.info h1,h2,h3{
+    font-size: 1.8rem;
+    line-height: 42px;
+    cursor:default;
+}
+.info span{
+    color: #CF45CB;
+}
+.info p{
+    margin-top: 20px;
+    line-height: 25px;
+    font-weight:250;
+}
+/*.info i{
+    color: white;
+    font-size: 2rem;
+    
+}*/
+
+/* services */
+.services{
+    
+    width: 1300px;
+    padding: 80px 0px;
+    margin: auto;
+    height: auto;
+    background-color:black;
+    font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+.services .topic{
+    
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 100px;
+    
+   
+
+}
+.services .topic h1{
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+}
+.center{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+    height: 800px;
+   
+   
+}
+.box_line {
+    display: flex;
+    flex-wrap: wrap;   /* allows boxes to go to next line */
+    
+    gap: 30px;            /* spacing between boxes */
+    max-width: 1300px; /* prevent overflow */
+    margin: auto;
+    height: auto;
+    margin-top: 100px;
+}
+
+.box_line .box {
+    background-color: rgb(17, 17, 17);
+    height: auto;
+    flex: 1 1 30%;   /* makes it flexible (3 per row ideally) */
+    max-width: 410px; /* prevent overgrowth */
+    min-width: 300px; /* prevent shrink too much */
+    border-radius: 16px;
+    padding: 10px;
+    outline: 2px solid rgba(52, 51, 51, 0.791);
+}
+.box .bx{
+    
+    color: #CF45CB;
+    font-size: 33px;
+    
+    border-radius: 100%;
+       background-color: rgb(17, 17, 17);
+
+    top: -3%;
+    font-weight: 400;
+   
+    
+
+}
+.box .info{
+   display: flex;
+   flex-direction: column;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+     padding-top: 30px;
+     padding-bottom: 30px;
+   height: auto;
+   
+   font-family: "Inter", serif;
+   font-optical-sizing: auto;
+   font-weight: normal;
+   font-style: normal;
+      background-color: rgb(17, 17, 17);
+
+}
+.box .info a{
+    display: flex;
+    background-color: rgb(17, 17, 17);
+       text-decoration: none;
+       width: 80px;
+    text-decoration-line: none;
+    
+}
+.box .info .icon1{
+    gap: 20px;
+    display: flex;
+    background-color: rgb(17, 17, 17);
+    
+   
+    border-radius: 100%;
+}
+.box .info button{
+  background-color: rgb(17, 17, 17);
+    color: #CF45CB;
+ 
+    border: none;
+    padding: 10px 0px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    align-items: flex-start;
+    display: flex;
+   
+}
+
+.box h1{
+        background-color: rgb(17, 17, 17);
+
+    margin-right: auto;
+    color: white;
+    font-size: 17px;
+   
+}
+.box span{
+       background-color: rgb(17, 17, 17);
+
+    margin-top: 8px;
+    color: white;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight:250;
+   
+}
+
+
+/* About */
+
+.about {
+    margin: auto;
+   
+    max-width: 1300px;   /* responsive instead of fixed */
+    padding: 30px 0px;  /* spacing instead of fixed height */
+    background-color: black;
+}
+.about_section .flex{
+    display: flex;
+    flex-wrap: wrap;     /* allows stacking on smaller screens */
+    
+    gap: 100px;           /* spacing between image and text */
+}
+
+.about_section .topic{
+    
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+    
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 100px;
+      font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+    
+   
+
+}
+.about_section .topic h1{
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+}
+
+.about .image img {
+    width: 100%;
+    max-width: 425px;   /* responsive image */
+    height: auto;
+    border-radius: 12px; /* optional: smooth corners */
+}
+
+.about .info {
+    margin-left: auto;
+    font-family: "Inter", serif;
+    color: white;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about h1 {
+    color: #CF45CB;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.about span {
+    line-height: 25px;
+    font-weight: 250;
+    color: white;
+}
+.about_section .skills{
+   
+    gap: 20px;
+    margin-top: 20px;
+    color: white;
+}
+.about_section .skills h2{
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+.about_section .skills ul{
+    display: flex;
+    flex-wrap: wrap;
+          
+
+    gap: 10px;
+    list-style: none;
+}
+.about_section .skills ul li{
+    background-color: rgb(31, 31, 31);
+    padding: 8px 15px;
+    border-radius: 8px;
+     font-family: "Inter", sans-serif;
+      gap: 10px; /* space between icon and text */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+.skills ul li i {
+ 
+ background-color: rgb(31, 31, 31);
+
+
+}
+.portfolio{
+    width: 1300px;
+    padding: 80px 0px;
+    margin: auto;
+    height: auto;
+    background-color:black;
+    font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+.portfolio .topic{
+    
+     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+    
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 100px;
+      font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+    
+   
+
+}
+.portfolio .topic h1{
+       font-size: 26px;
+    font-weight: 500;
+    color: white;
+}
+.portfolio .topic span{
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.box_line1{
+    display: flex;
+    flex-wrap: wrap;   /* allows boxes to go to next line */
+    
+    gap: 30px;            /* spacing between boxes */
+    max-width: 1300px; /* prevent overflow */
+    margin: auto;
+    height: auto;
+    margin-top: 50px;
+}
+.box_line1 .box1 {
+    background-color: rgb(17, 17, 17);
+    height: auto;
+    flex: 1 1 30%;   /* makes it flexible (3 per row ideally) */
+    max-width: 410px; /* prevent overgrowth */
+    min-width: 300px; /* prevent shrink too much */
+    border-radius: 16px;
+    padding: 30px;
+    outline: 2px solid rgba(52, 51, 51, 0.791);
+}
+.box1 img{
+    width: 100%;
+    border-radius: 12px; /* optional: smooth corners */
+    height: auto;
+}
+.box1 .overlay{
+   display: flex;
+   flex-direction: column;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+   height: auto;
+   
+   font-family: "Inter", serif;
+   font-optical-sizing: auto;
+   font-weight: normal;
+   font-style: normal;
+      background-color: rgb(17, 17, 17);
+
+}
+.overlay h2{
+        background-color: rgb(17, 17, 17);
+line-height: normal;
+    margin-right: auto;
+    padding-bottom: 17px;
+    color: white;
+    font-size: 17px;
+   
+}
+.overlay p{
+       background-color: rgb(17, 17, 17);
+
+    margin-top: 8px;
+    color: white;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight:250;
+   
+}
+.box1 .overlay a{
+    display: flex;
+    background-color: rgb(17, 17, 17);
+       text-decoration: none;
+       width: 80px;
+    text-decoration-line: none;
+    
+}
+.overlay .skills_used{
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    color: white;
+         background-color: rgb(17, 17, 17);
+
+}
+.overlay .skills_used span{
+    background-color:#ca51c6ea;
+    padding: 5px 10px;
+    border-radius: 8px;
+     font-family: "Inter", sans-serif;
+      gap: 10px; /* space between icon and text */
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.overlay .btn{
+  background-color: rgb(17, 17, 17);
+    color: #CF45CB;
+ 
+    border: none;
+    padding: 10px 0px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    align-items: flex-start;
+    display: flex;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header hide/show animation */
+header {
+    transition: top 0.4s ease, box-shadow 0.3s ease;
+}
+
+header.hide {
+    top: -120px; /* hides the header */
+}
+
+header.show-shadow {
+    box-shadow: 0 4px 12px rgba(34, 34, 34, 0.5);
+}
