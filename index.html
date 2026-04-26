@@ -1651,6 +1651,12 @@ modal.onclick = (e) => {
     frame.src = "";
   }
 };
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false;
+};
   </script>
 
 </body>
