@@ -12,34 +12,59 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <style>
-    :root {
-      --bg:        #FAFAF8;
-      --bg-2:      #F4F3F0;
-      --bg-3:      #EDECE9;
-      --border:    rgba(0,0,0,0.07);
-      --border-2:  rgba(0,0,0,0.13);
-      --ink:       #0E0E0C;
-      --ink-2:     #555450;
-      --ink-3:     #A8A6A0;
-      --accent:    #C9621A;
-      --accent-dim: rgba(201,98,26,0.08);
-      --display:   'Cormorant Garamond', Georgia, serif;
-      --body:      'DM Sans', sans-serif;
-      --mono:      'DM Mono', monospace;
-      --space-xs:  12px;
-      --space-sm:  24px;
-      --space-md:  48px;
-      --space-lg:  80px;
-      --space-xl:  160px;
-      --max:       1200px;
-      --ease:      cubic-bezier(.22, 1, .36, 1);
-      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-      --ease-out:  cubic-bezier(0, 0, 0.2, 1);
-      --nav-h: 76px;
-      --radius-pill: 100px;
-      --radius-card: 20px;
-      --radius-sm:   12px;
-    }
+  :root {
+  /* Colors */
+  --bg: #F8F7F4;
+  --bg-2: #F4F3F0;
+  --bg-3: #EDECE9;
+
+  --ink: #111111;
+  --ink-2: #2A2A2A;
+  --ink-3: #8C8A84;
+
+  --accent: #58614A;
+  --accent-hover: #4F5642;
+  --accent-light: #717963;
+  --accent-dim: rgba(95, 102, 80, 0.08);
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-2: rgba(0, 0, 0, 0.12);
+  --border-strong: rgba(0, 0, 0, 0.18);
+
+  /* Typography */
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+
+  /* Spacing */
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 24px;
+  --space-md: 48px;
+  --space-lg: 80px;
+  --space-xl: 160px;
+  --space-2xl: 240px;
+
+  /* Layout */
+  --max: 1200px;
+  --nav-h: 76px;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-card: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -737,21 +762,127 @@
       :root { --space-xl: 100px; --space-lg: 40px; }
       .about-grid, .project-card, .matrix-grid, .contact-grid, .phil-grid, .cert-grid { grid-template-columns: 1fr; }
       .project-card:nth-child(even) { direction: ltr; }
+      /* Image always on top, info always below on mobile */
+      .project-card { display: flex; flex-direction: column; }
+      .project-visual { order: 1; position: static; width: 100%; }
+      .project-info   { order: 2; }
+      .mockup { width: 100%; aspect-ratio: 16 / 10; }
       .nav-links { display: none; }
-      .nav-burger { display: flex; }
       .nav-cta { display: none; }
       .hero-h1 { font-size: 3.5rem; }
       .hero-scroll { display: none; }
+
+      /* ── Mobile nav: transparent bar, two floating islands ── */
+      .nav-inner {
+        padding: 0 18px;
+        justify-content: space-between;
+        /* Kill the scrolled-state pill on the bar itself */
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        height: var(--nav-h);
+      }
+
+      /* Remove the accent line pseudo-element on mobile */
+      nav.scrolled .nav-inner::before { display: none; }
+
+      /* Logo becomes its own pill island — light glass background */
+      .nav-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        flex: 0 0 auto;
+        background: rgba(250, 249, 246, 0.88);
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 100px;
+        padding: 6px 16px 6px 6px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 1px 0 rgba(255,255,255,0.8) inset;
+        transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease-spring);
+      }
+      .nav-logo:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.8) inset;
+      }
+      .nav-logo-avatar {
+        width: 30px; height: 30px;
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+      .nav-logo:hover .nav-logo-avatar { transform: none; box-shadow: none; }
+      .nav-logo-name {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--ink);
+        white-space: nowrap;
+        letter-spacing: -0.01em;
+      }
+      .nav-logo-name em { color: var(--accent); }
+      .nav-logo-sub { display: none; }
+      .nav-logo-pulse { display: none; }
+
+      /* Burger becomes a standalone circle island — same glass treatment */
+      .nav-burger {
+        display: flex;
+        flex: 0 0 auto;
+        width: 46px; height: 46px;
+        padding: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: rgba(250, 249, 246, 0.88);
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 1px 0 rgba(255,255,255,0.8) inset;
+        transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease-spring);
+      }
+      .nav-burger:hover {
+        background: rgba(250, 249, 246, 0.88);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.8) inset;
+      }
+      .nav-burger span { background: var(--ink); }
+      /* Centered lines inside circle */
+      .nav-burger span:nth-child(1) { width: 18px; }
+      .nav-burger span:nth-child(2) { width: 14px; }
+      .nav-burger span:nth-child(3) { width: 10px; }
+      .nav-burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); width: 18px; }
+      .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .nav-burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); width: 18px; }
+
+      /* Scrolled state on mobile: keep bar transparent, islands handle themselves */
+      nav.scrolled .nav-inner {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        height: var(--nav-h);
+        padding: 0 18px;
+      }
     }
+
     @media (max-width: 640px) {
       .container { padding: 0 24px; }
       .writing-item { grid-template-columns: 1fr; gap: 12px; }
       .article-link { justify-content: flex-start; }
       .email-primary-card { flex-direction: column; grid-column: span 2; }
     }
+
     @media (max-width: 480px) {
       .project-cta { flex-direction: column; align-items: stretch; }
       .btn-cta-primary, .btn-cta-secondary { justify-content: center; width: 100%; }
+      .nav-inner { padding: 0 14px; }
+      nav.scrolled .nav-inner { padding: 0 14px !important; }
     }
   </style>
 </head>
